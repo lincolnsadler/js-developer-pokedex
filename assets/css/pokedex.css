@@ -81,22 +81,25 @@
 .pokemon {
     display: flex;
     flex-direction: column;
-    margin: .5rem;
+    margin: 0.5rem;
     padding: 1rem;
     border-radius: 1rem;
+}
+.pokemon:hover {
+    cursor: pointer;
 }
 
 .pokemon .number {
     color: #000;
-    opacity: .3;
+    opacity: 0.3;
     text-align: right;
-    font-size: .625rem;
+    font-size: 0.625rem;
 }
 
 .pokemon .name {
     text-transform: capitalize;
     color: #fff;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
 }
 
 .pokemon .detail {
@@ -114,9 +117,9 @@
 
 .pokemon .detail .types .type {
     color: #fff;
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
+    font-size: 0.625rem;
     border-radius: 1rem;
     filter: brightness(1.1);
     text-align: center;
@@ -137,13 +140,115 @@
 }
 
 .pagination button {
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
+    font-size: 0.625rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+}
+
+/* Modal Styles */
+.modal-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 1rem;
+}
+
+.modal-content .name {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content .number {
+    color: #000;
+    opacity: 0.5;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.modal-content .types {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.modal-content .types .type {
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 1rem auto;
+}
+
+.modal-content .stats {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.modal-content .stats h3 {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.modal-content .stats ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content .stats li {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 380px) {
